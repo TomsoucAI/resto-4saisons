@@ -1,0 +1,28 @@
+---
+const { category } = Astro.props;
+---
+<div class="overflow-x-auto">
+  <table class="w-full border-collapse text-sm">
+    <thead>
+      <tr class="text-left text-charcoal/50">
+        <th class="py-2 pr-2 font-semibold">&nbsp;</th>
+        {category.columns.map((c) => (
+          <th class="px-2 py-2 text-right font-semibold whitespace-nowrap">{c}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {category.items.map((item) => (
+        <tr class="border-t border-cream-line align-top">
+          <th scope="row" class="py-2.5 pr-2 text-left font-semibold">
+            {item.nom}
+            {item.desc && <span class="block text-xs font-normal text-charcoal/50">{item.desc}</span>}
+          </th>
+          {item.prices.map((p) => (
+            <td class="px-2 py-2.5 text-right tabular-nums whitespace-nowrap">{p ? `${p} $` : '—'}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
