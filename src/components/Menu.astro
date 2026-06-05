@@ -50,7 +50,7 @@ const ordered = [
     <p class="mt-2 text-sm text-charcoal/55">Touchez une catégorie pour afficher les plats et les prix.</p>
 
     <div class="mt-6 flex flex-col gap-3">
-      {ordered.map((c, i) => <MenuSection category={c} images={imagesFor(c.id)} open={i === 0} />)}
+      {ordered.map((c) => <MenuSection category={c} images={imagesFor(c.id)} />)}
     </div>
   </div>
 </section>
