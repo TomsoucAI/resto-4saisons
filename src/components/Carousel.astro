@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+const { images, label } = Astro.props;
+const single = images.length === 1;
+---
+{single ? (
+  <Image src={images[0]} alt={label} loading="lazy" class="aspect-video w-full rounded-lg object-cover" />
+) : (
+  <div class="carousel relative overflow-hidden rounded-lg">
+    <div class="carousel-track flex snap-x snap-mandatory overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {images.map((img, i) => (
+        <Image src={img} alt={`${label} — photo ${i + 1}`} loading="lazy" class="aspect-video w-full shrink-0 snap-center object-cover" />
+      ))}
+    </div>
+    <button type="button" class="carousel-prev absolute left-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-charcoal/55 text-lg text-white backdrop-blur transition hover:bg-charcoal/80" aria-label="Image précédente">‹</button>
+    <button type="button" class="carousel-next absolute right-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-charcoal/55 text-lg text-white backdrop-blur transition hover:bg-charcoal/80" aria-label="Image suivante">›</button>
+    <div class="pointer-events-none absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
+      {images.map(() => <span class="h-1.5 w-1.5 rounded-full bg-white/70"></span>)}
+    </div>
+  </div>
+)}
+
+<script>
+  document.querySelectorAll('.carousel').forEach((c) => {
+    const track = c.querySelector('.carousel-track');
+    if (!(track instanceof HTMLElement)) return;
+    c.querySelector('.carousel-prev')?.addEventListener('click', () =>
+      track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' })
+    );
+    c.querySelector('.carousel-next')?.addEventListener('click', () =>
+      track.scrollBy({ left: track.clientWidth, behavior: 'smooth' })
+    );
+  });
+</script>

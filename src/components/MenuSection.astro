@@ -1,9 +1,10 @@
 ---
 import PriceTable from './PriceTable.astro';
-const { category } = Astro.props;
+import Carousel from './Carousel.astro';
+const { category, images = [], open = false } = Astro.props;
 const count = category.items.length;
 ---
-<details class="menu-cat group overflow-hidden rounded-xl bg-white shadow-sm transition hover:shadow-md">
+<details open={open} class="menu-cat group overflow-hidden rounded-xl bg-white shadow-sm transition hover:shadow-md">
   <summary class="flex cursor-pointer select-none items-center justify-between gap-3 px-4 py-4 sm:px-5">
     <span class="font-display text-lg font-bold text-charcoal">
       {category.nom}
@@ -15,6 +16,11 @@ const count = category.items.length;
   </summary>
 
   <div class="border-t border-cream-line px-4 pb-4 pt-3 sm:px-5">
+    {images.length > 0 && (
+      <div class="mb-4">
+        <Carousel images={images} label={`Plats — ${category.nom}`} />
+      </div>
+    )}
     {category.note && <p class="mb-3 text-sm italic text-charcoal/50">{category.note}</p>}
     {category.columns ? (
       <PriceTable category={category} />
