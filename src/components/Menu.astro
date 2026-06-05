@@ -3,39 +3,13 @@ import menu from '../data/menu.json';
 import MenuSection from './MenuSection.astro';
 ---
 <section id="menu" class="scroll-mt-20 bg-cream py-14">
-  <div class="mx-auto max-w-5xl px-4">
+  <div class="mx-auto max-w-3xl px-4">
     <p class="text-xs font-semibold tracking-[0.2em] text-brick">NOTRE MENU</p>
     <h2 class="mt-2 font-display text-3xl font-bold">Le menu complet</h2>
+    <p class="mt-2 text-sm text-charcoal/55">Touchez une catégorie pour afficher les plats et les prix.</p>
 
-    <div id="menuFilters" class="mt-5 flex flex-wrap gap-2">
-      <button data-filter="all" class="filter-chip rounded-full bg-charcoal px-3 py-1.5 text-sm font-semibold text-white" aria-pressed="true">Tout</button>
-      {menu.categories.map((c) => (
-        <button data-filter={c.id} class="filter-chip rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-charcoal/70 shadow-sm" aria-pressed="false">{c.nom}</button>
-      ))}
-    </div>
-
-    <div id="menuSections" class="mt-8 grid gap-8 sm:grid-cols-2">
+    <div class="mt-6 flex flex-col gap-3">
       {menu.categories.map((c) => <MenuSection category={c} />)}
     </div>
   </div>
 </section>
-
-<script>
-  const chips = document.querySelectorAll('.filter-chip');
-  const cats = document.querySelectorAll('.menu-cat');
-  function activate(filter) {
-    cats.forEach((el) => {
-      const show = filter === 'all' || el.getAttribute('data-category') === filter;
-      el.style.display = show ? '' : 'none';
-    });
-    chips.forEach((chip) => {
-      const on = chip.getAttribute('data-filter') === filter;
-      chip.setAttribute('aria-pressed', String(on));
-      chip.classList.toggle('bg-charcoal', on);
-      chip.classList.toggle('text-white', on);
-      chip.classList.toggle('bg-white', !on);
-      chip.classList.toggle('text-charcoal/70', !on);
-    });
-  }
-  chips.forEach((chip) => chip.addEventListener('click', () => activate(chip.getAttribute('data-filter'))));
-</script>

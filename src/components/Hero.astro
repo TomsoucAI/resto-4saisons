@@ -2,17 +2,17 @@
 import infos from '../data/infos.json';
 import OpenStatus from './OpenStatus.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const heroBg = `${base}/img/hero-ambiance.jpg`;
+const heroBg = `${base}/img/hero-restaurant.jpg`;
 ---
 <section class="relative isolate overflow-hidden bg-charcoal text-white">
   <img src={heroBg} alt="Table garnie de pizza, pâtes et club sandwich au Restaurant 4 Saisons" class="absolute inset-0 -z-10 h-full w-full object-cover" />
-  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-charcoal/85 via-charcoal/70 to-charcoal/92"></div>
-  <div class="relative mx-auto max-w-5xl px-4 py-16 text-center sm:py-24">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-charcoal/65 via-charcoal/45 to-charcoal/80"></div>
+  <div class="relative mx-auto max-w-5xl px-4 py-16 text-center sm:py-24 [text-shadow:0_2px_12px_rgb(0_0_0/0.55)]">
     <p class="text-xs font-semibold tracking-[0.2em] text-brick">PONT-ROUGE · DEPUIS DES DÉCENNIES</p>
     <h1 class="mx-auto mt-4 max-w-2xl font-display text-4xl font-bold leading-tight sm:text-5xl">
       Pizzas généreuses &amp; assiettes débordantes
     </h1>
-    <p class="mx-auto mt-4 max-w-xl text-white/70">
+    <p class="mx-auto mt-4 max-w-xl text-white/80">
       Cuisine maison et service courtois au cœur de Pont-Rouge — sur place et en livraison.
     </p>
     <div class="mt-8 flex flex-col items-center gap-4">
