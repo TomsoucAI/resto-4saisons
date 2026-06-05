@@ -1,0 +1,55 @@
+---
+import infos from '../data/infos.json';
+const liens = [
+  { href: '#menu', label: 'Menu' },
+  { href: '#apropos', label: 'À propos' },
+  { href: '#heures', label: 'Heures & contact' },
+];
+---
+<header class="sticky top-0 z-50 bg-charcoal/95 backdrop-blur text-white">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+    <a href="#top" class="font-[var(--font-display)] text-lg font-bold">
+      <span class="text-brick">4</span> Saisons
+    </a>
+
+    <ul class="hidden gap-6 text-sm md:flex">
+      {liens.map((l) => (
+        <li><a href={l.href} class="text-white/80 transition hover:text-white">{l.label}</a></li>
+      ))}
+    </ul>
+
+    <div class="flex items-center gap-2">
+      <a href={`tel:${infos.telephoneLien}`} class="rounded-lg bg-brick px-3 py-2 text-sm font-semibold transition hover:bg-brick-dark">
+        📞 <span class="hidden sm:inline">Appeler</span>
+      </a>
+      <button id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" class="md:hidden p-2">
+        <span class="block h-0.5 w-6 bg-white"></span>
+        <span class="mt-1.5 block h-0.5 w-6 bg-white"></span>
+        <span class="mt-1.5 block h-0.5 w-6 bg-white"></span>
+      </button>
+    </div>
+  </nav>
+
+  <ul id="navMobile" class="hidden flex-col gap-1 border-t border-white/10 px-4 pb-3 md:hidden">
+    {liens.map((l) => (
+      <li><a href={l.href} class="block py-2 text-white/90">{l.label}</a></li>
+    ))}
+  </ul>
+</header>
+
+<script>
+  const btn = document.getElementById('navToggle');
+  const menu = document.getElementById('navMobile');
+  btn?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    menu?.classList.toggle('flex', open);
+    btn.setAttribute('aria-expanded', String(open));
+  });
+  menu?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+      btn?.setAttribute('aria-expanded', 'false');
+    })
+  );
+</script>
