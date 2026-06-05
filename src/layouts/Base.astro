@@ -1,0 +1,59 @@
+---
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/600.css';
+import '../styles/global.css';
+import infos from '../data/infos.json';
+
+const { title = 'Restaurant 4 Saisons — Pizzas et cuisine à Pont-Rouge', description = infos.apropos.slice(0, 155) } = Astro.props;
+
+const jours = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const openingHours = infos.heures
+  .filter((h) => h.ouvert && h.ferme)
+  .map((h) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: jours[infos.heures.indexOf(h)],
+    opens: h.ouvert,
+    closes: h.ferme,
+  }));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Restaurant',
+  name: infos.nom,
+  servesCuisine: ['Pizza', 'Cuisine canadienne', 'Casse-croûte'],
+  telephone: infos.telephoneLien,
+  url: 'https://resto4saisons.com',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: infos.adresse.rue,
+    addressLocality: infos.adresse.ville,
+    addressRegion: infos.adresse.province,
+    postalCode: infos.adresse.codePostal,
+    addressCountry: infos.adresse.pays,
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: infos.geo.lat, longitude: infos.geo.lng },
+  openingHoursSpecification: openingHours,
+};
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:locale" content="fr_CA" />
+    <meta name="theme-color" content="#1c1b1a" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="bg-cream antialiased">
+    <slot />
+  </body>
+</html>
