@@ -21,7 +21,7 @@
       { "nom": "Salade aux œufs", "prices": [null, "15,60"] },
       { "nom": "Salade 4 saisons", "prices": [null, "15,85"] }
     ]},
-    { "id": "frites", "nom": "Frites & Poutines", "note": "Producteur de pommes de terre local pour un meilleur goût", "columns": ["Bébé", "Petite", "Moy.", "Gros", "Ex-gros"], "items": [
+    { "id": "frites", "nom": "Frites & Poutines", "etoiles": 5, "note": "Producteur de pommes de terre local pour un meilleur goût", "columns": ["Bébé", "Petite", "Moy.", "Gros", "Ex-gros"], "items": [
       { "nom": "Frites", "prices": [null, "5,75", "8,10", "10,45", "12,95"] },
       { "nom": "Frites épicées", "prices": [null, "6,80", null, null, null] },
       { "nom": "Frites sauce", "prices": ["6,15", "7,10", "9,30", "12,95", null] },
@@ -35,7 +35,7 @@
       { "nom": "Galvaude fromage", "prices": [null, "12,35", "17,50", "24,75", null] },
       { "nom": "Dulton", "prices": [null, "12,20", "17,20", "24,75", null] }
     ]},
-    { "id": "pates", "nom": "Pâtes", "columns": ["Demi", "Régulier"], "items": [
+    { "id": "pates", "nom": "Pâtes", "etoiles": 5, "columns": ["Demi", "Régulier"], "items": [
       { "nom": "Spaghetti", "prices": ["11,05", "15,80"] },
       { "nom": "Spaghetti végétarien", "prices": ["11,05", "15,80"] },
       { "nom": "Spaghetti gratiné", "prices": ["13,80", "18,65"] },
@@ -44,7 +44,7 @@
       { "nom": "Lasagne 4 saisons", "prices": ["16,30", "23,90"] },
       { "nom": "Extra champignons", "prices": ["3,75", null] }
     ]},
-    { "id": "pizza", "nom": "Pizza", "columns": ["Mini 8\"", "Petite 9\"", "Med. 12\"", "Large 14\"", "Ex-large 16\""], "items": [
+    { "id": "pizza", "nom": "Pizza", "etoiles": 5, "columns": ["Mini 8\"", "Petite 9\"", "Med. 12\"", "Large 14\"", "Ex-large 16\""], "items": [
       { "nom": "Fromage", "prices": ["11,50", "13,40", "19,50", "24,25", "28,00"] },
       { "nom": "Pepperoni", "prices": ["13,25", "15,25", "23,50", "28,25", "33,50"] },
       { "nom": "Champignons", "prices": ["12,80", "14,70", "21,50", "26,75", "32,00"] },
@@ -60,7 +60,7 @@
       { "nom": "Fromage et viandes", "desc": "fromage, pepperoni, bacon, sauce spaghetti, poulet B.B.Q.", "prices": ["3,50", "3,75", "5,00", "5,50", "7,00"] },
       { "nom": "Smoked meat", "prices": ["4,00", "4,00", "6,25", "6,25", "7,75"] }
     ]},
-    { "id": "poulet", "nom": "Poulet", "items": [
+    { "id": "poulet", "nom": "Poulet", "etoiles": 5, "items": [
       { "nom": "1 morceau pané", "price": "15,75" },
       { "nom": "2 morceaux panés", "price": "17,25" },
       { "nom": "3 morceaux panés", "price": "18,90" },
@@ -78,7 +78,7 @@
       { "nom": "Smoked meat seul", "prices": ["11,15", "14,30"] },
       { "nom": "Smoked meat assiette", "desc": "servis avec frites, chou et cornichons", "prices": ["17,15", "19,95"] }
     ]},
-    { "id": "assiettes", "nom": "Nos assiettes", "note": "Servies avec frites et salade de chou", "items": [
+    { "id": "assiettes", "nom": "Nos assiettes", "etoiles": 5, "note": "Servies avec frites et salade de chou", "items": [
       { "nom": "Club au poulet", "price": "17,95" },
       { "nom": "Club au jambon", "price": "17,95" },
       { "nom": "Club aux œufs", "price": "17,95" },
