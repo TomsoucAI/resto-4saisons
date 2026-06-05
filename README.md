@@ -16,7 +16,7 @@ npm test         # tests unitaires
 - **Menu et prix** : `src/data/menu.json` (une ligne par item).
 - **Coordonnées, heures, avis** : `src/data/infos.json`.
   - `heures` et `livraison` sont ordonnés dimanche → samedi (index 0 = dimanche).
-- **Image du hero** : `public/img/hero-restaurant.jpg`.
+- **Diaporama du hero** : déposez vos photos (style « ambiance / table ») dans `src/assets/hero/`. Elles défilent automatiquement (fondu, ~5 s), triées par nom de fichier.
 
 ### Photos des plats (par catégorie)
 
