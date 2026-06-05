@@ -1,0 +1,58 @@
+---
+import infos from '../data/infos.json';
+const adr = infos.adresse;
+const adresseTexte = `${adr.rue}, ${adr.ville}, ${adr.province} ${adr.codePostal}`;
+const mapQuery = encodeURIComponent(`${infos.nom}, ${adresseTexte}`);
+const livraisonActive = infos.livraison.filter((l) => l.midi || l.soir);
+---
+<section id="heures" class="scroll-mt-20 bg-cream py-14">
+  <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2">
+    <div>
+      <p class="text-xs font-semibold tracking-[0.2em] text-brick">HEURES &amp; CONTACT</p>
+      <h2 class="mt-2 font-display text-3xl font-bold">Venez nous voir</h2>
+
+      <table class="mt-5 w-full text-sm">
+        <caption class="sr-only">Heures d'ouverture</caption>
+        <tbody>
+          {infos.heures.map((h) => (
+            <tr class="border-t border-cream-line">
+              <th scope="row" class="py-2 text-left font-semibold">{h.jour}</th>
+              <td class="py-2 text-right tabular-nums">{h.ouvert ? `${h.ouvert} – ${h.ferme}` : 'Fermé'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h3 class="mt-6 font-semibold">Heures de livraison</h3>
+      <table class="mt-2 w-full text-sm">
+        <tbody>
+          {livraisonActive.map((l) => (
+            <tr class="border-t border-cream-line">
+              <th scope="row" class="py-2 text-left font-semibold">{l.jour}</th>
+              <td class="py-2 text-right">{l.midi} · {l.soir}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <address class="mt-6 not-italic">
+        <p class="font-semibold">{infos.nom}</p>
+        <p class="text-charcoal/70">{adresseTexte}</p>
+        <a href={`tel:${infos.telephoneLien}`} class="mt-2 inline-block font-semibold text-brick">📞 {infos.telephoneAffiche}</a>
+      </address>
+      <a href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`} target="_blank" rel="noopener" class="mt-4 inline-block rounded-lg bg-brick px-4 py-2.5 font-semibold text-white transition hover:bg-brick-dark">
+        Obtenir l'itinéraire
+      </a>
+    </div>
+
+    <div class="min-h-[320px] overflow-hidden rounded-xl shadow-sm">
+      <iframe
+        title="Carte — Restaurant 4 Saisons"
+        class="h-full min-h-[320px] w-full border-0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+      ></iframe>
+    </div>
+  </div>
+</section>

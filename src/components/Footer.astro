@@ -1,0 +1,8 @@
+---
+import infos from '../data/infos.json';
+const adr = infos.adresse;
+---
+<footer class="bg-charcoal py-8 text-center text-sm text-white/50">
+  <p>{adr.rue}, {adr.ville}, {adr.province} {adr.codePostal} · <a href={`tel:${infos.telephoneLien}`} class="text-white/70">{infos.telephoneAffiche}</a></p>
+  <p class="mt-1">© 2026 {infos.nom} — Tous droits réservés.</p>
+</footer>
