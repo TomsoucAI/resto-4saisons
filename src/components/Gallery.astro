@@ -1,8 +1,8 @@
 ---
 import Carousel from './Carousel.astro';
 
-// Any image dropped in src/assets/gallery/ becomes a slide (sorted by filename).
-const slides = import.meta.glob('../assets/gallery/*.{jpg,jpeg,png,webp}', { eager: true });
+// Any image dropped in src/assets/interior/ becomes a slide (sorted by filename).
+const slides = import.meta.glob('../assets/interior/*.{jpg,jpeg,png,webp}', { eager: true });
 const images = Object.entries(slides)
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([, mod]) => mod.default);
@@ -10,10 +10,11 @@ const images = Object.entries(slides)
 {images.length > 0 && (
   <section id="galerie" class="scroll-mt-20 bg-charcoal py-14 text-white">
     <div class="mx-auto max-w-3xl px-4">
-      <p class="text-xs font-semibold tracking-[0.2em] text-brick">EN IMAGES</p>
-      <h2 class="mt-2 font-display text-3xl font-bold">Le restaurant &amp; nos plats</h2>
+      <p class="text-xs font-semibold tracking-[0.2em] text-brick">L'AMBIANCE</p>
+      <h2 class="mt-2 font-display text-3xl font-bold">Notre salle à manger</h2>
+      <p class="mt-2 max-w-xl text-white/70">Récemment rénovée — moderne, chaleureuse et décontractée.</p>
       <div class="mt-6 shadow-lg">
-        <Carousel images={images} label="Restaurant 4 Saisons" />
+        <Carousel images={images} label="Salle à manger du Restaurant 4 Saisons" autoplay={true} interval={3500} />
       </div>
     </div>
   </section>

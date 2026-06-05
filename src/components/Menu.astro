@@ -3,12 +3,23 @@ import menu from '../data/menu.json';
 import MenuSection from './MenuSection.astro';
 
 // Auto-discover per-category photos dropped in src/assets/menu/.
-// Match `<category-id>.jpg` and `<category-id>-2.jpg`, `<category-id>-3.jpg`, ... → carousel.
+// A photo belongs to a category when its filename STARTS WITH the category key
+// (or a friendly alias), e.g. `pizza-1.jpg`, `poutine.jpg`, `poulet-pane-2.jpg`.
+// Several photos for one category → swipeable carousel. Accents/spaces are tolerated.
 const menuImgs = import.meta.glob('../assets/menu/*.{jpg,jpeg,png,webp}', { eager: true });
+
+const ALIASES = {
+  frites: ['frites', 'poutine'],
+  assiettes: ['assiettes', 'nos-assiettes', 'club'],
+};
+const normalize = (s) =>
+  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[\s_]+/g, '-');
+
 function imagesFor(id) {
-  const re = new RegExp('/' + id + '(-\\d+)?\\.(jpe?g|png|webp)$', 'i');
+  const keys = ALIASES[id] || [id];
+  const re = new RegExp('^(' + keys.join('|') + ')([-._0-9]|$)');
   return Object.entries(menuImgs)
-    .filter(([path]) => re.test(path))
+    .filter(([path]) => re.test(normalize(path.split('/').pop())))
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([, mod]) => mod.default);
 }
