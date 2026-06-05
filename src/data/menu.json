@@ -21,7 +21,7 @@
       { "nom": "Salade aux œufs", "prices": [null, "15,60"] },
       { "nom": "Salade 4 saisons", "prices": [null, "15,85"] }
     ]},
-    { "id": "frites", "nom": "Frites & Poutines", "etoiles": 5, "note": "Producteur de pommes de terre local pour un meilleur goût", "columns": ["Bébé", "Petite", "Moy.", "Gros", "Ex-gros"], "items": [
+    { "id": "frites", "nom": "Frites & Poutines", "etoiles": 3, "note": "Producteur de pommes de terre local pour un meilleur goût", "columns": ["Bébé", "Petite", "Moy.", "Gros", "Ex-gros"], "items": [
       { "nom": "Frites", "prices": [null, "5,75", "8,10", "10,45", "12,95"] },
       { "nom": "Frites épicées", "prices": [null, "6,80", null, null, null] },
       { "nom": "Frites sauce", "prices": ["6,15", "7,10", "9,30", "12,95", null] },
@@ -35,7 +35,7 @@
       { "nom": "Galvaude fromage", "prices": [null, "12,35", "17,50", "24,75", null] },
       { "nom": "Dulton", "prices": [null, "12,20", "17,20", "24,75", null] }
     ]},
-    { "id": "pates", "nom": "Pâtes", "etoiles": 5, "columns": ["Demi", "Régulier"], "items": [
+    { "id": "pates", "nom": "Pâtes", "etoiles": 3, "columns": ["Demi", "Régulier"], "items": [
       { "nom": "Spaghetti", "prices": ["11,05", "15,80"] },
       { "nom": "Spaghetti végétarien", "prices": ["11,05", "15,80"] },
       { "nom": "Spaghetti gratiné", "prices": ["13,80", "18,65"] },
@@ -78,7 +78,7 @@
       { "nom": "Smoked meat seul", "prices": ["11,15", "14,30"] },
       { "nom": "Smoked meat assiette", "desc": "servis avec frites, chou et cornichons", "prices": ["17,15", "19,95"] }
     ]},
-    { "id": "assiettes", "nom": "Nos assiettes", "etoiles": 5, "note": "Servies avec frites et salade de chou", "items": [
+    { "id": "assiettes", "nom": "Nos assiettes", "etoiles": 4, "note": "Servies avec frites et salade de chou", "items": [
       { "nom": "Club au poulet", "price": "17,95" },
       { "nom": "Club au jambon", "price": "17,95" },
       { "nom": "Club aux œufs", "price": "17,95" },

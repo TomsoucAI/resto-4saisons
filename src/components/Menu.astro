@@ -24,12 +24,12 @@ function imagesFor(id) {
     .map(([, mod]) => mod.default);
 }
 
-// Best-selling categories (those with photos) lead the menu; the first opens by default.
-const featured = ['pizza', 'frites', 'poulet', 'pates', 'assiettes'];
+// Starred (best-seller) categories lead the menu, sorted by rating descending
+// (stable sort → ties keep menu order); unrated categories follow. First opens by default.
 const ordered = [
-  ...featured.map((id) => menu.categories.find((c) => c.id === id)),
-  ...menu.categories.filter((c) => !featured.includes(c.id)),
-].filter(Boolean);
+  ...menu.categories.filter((c) => c.etoiles).sort((a, b) => b.etoiles - a.etoiles),
+  ...menu.categories.filter((c) => !c.etoiles),
+];
 ---
 <section id="menu" class="scroll-mt-20 bg-cream py-14">
   <div class="mx-auto max-w-3xl px-4">
