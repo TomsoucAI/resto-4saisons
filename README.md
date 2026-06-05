@@ -49,6 +49,12 @@ Déposez vos photos de la salle / du restaurant dans `src/assets/interior/` (n'i
 
 > Toutes les images sont optimisées automatiquement par Astro (WebP, redimensionnement, chargement différé). Note : `src/assets/menu/pizza-1.jpg` est encore un **exemple** (recadrage de la photo du hero) à remplacer par une vraie photo de pizza.
 
+## Avis Google
+
+Le bouton « Laissez-nous un avis » (dans la section À propos et le pied de page) utilise `googleReviewUrl` dans `src/data/infos.json`. Pour l'instant il **ouvre la fiche Google** du restaurant (l'internaute touche ensuite « Écrire un avis »).
+
+Pour passer au **dialogue d'avis direct** (un seul clic, étoiles + texte) : récupérer le **Place ID** de la fiche Google (chercher le restaurant sur Google, cliquer « Écrire un avis » dans le panneau, copier l'URL `…/writereview?placeid=ChIJ…`) et remplacer `googleReviewUrl` par cette URL.
+
 ## À confirmer avant la mise en ligne
 
 - Code postal exact (`G3H 2Z9` par défaut).

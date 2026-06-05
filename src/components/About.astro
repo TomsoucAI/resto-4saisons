@@ -1,6 +1,7 @@
 ---
 import infos from '../data/infos.json';
 import Reviews from './Reviews.astro';
+import ReviewCTA from './ReviewCTA.astro';
 ---
 <section id="apropos" class="scroll-mt-20 bg-charcoal py-14 text-white">
   <div class="mx-auto max-w-5xl px-4">
@@ -8,5 +9,6 @@ import Reviews from './Reviews.astro';
     <h2 class="mt-2 font-display text-3xl font-bold">Une institution de Pont-Rouge</h2>
     <p class="mt-4 max-w-3xl text-white/75 leading-relaxed">{infos.apropos}</p>
     <Reviews />
+    <ReviewCTA />
   </div>
 </section>

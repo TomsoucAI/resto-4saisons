@@ -2,6 +2,7 @@
   "nom": "Restaurant 4 Saisons",
   "telephoneAffiche": "(418) 873-3003",
   "telephoneLien": "+14188733003",
+  "googleReviewUrl": "https://www.google.com/maps/search/?api=1&query=Restaurant%204%20Saisons%2C%2029%20rue%20du%20Coll%C3%A8ge%2C%20Pont-Rouge%2C%20QC",
   "adresse": {
     "rue": "29 rue du Collège",
     "ville": "Pont-Rouge",
