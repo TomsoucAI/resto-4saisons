@@ -25,11 +25,12 @@ const livraisonActive = infos.livraison.filter((l) => l.midi || l.soir);
 
       <h3 class="mt-6 font-semibold">Heures de livraison</h3>
       <table class="mt-2 w-full text-sm">
+        <caption class="sr-only">Heures de livraison</caption>
         <tbody>
           {livraisonActive.map((l) => (
             <tr class="border-t border-cream-line">
               <th scope="row" class="py-2 text-left font-semibold">{l.jour}</th>
-              <td class="py-2 text-right">{l.midi} · {l.soir}</td>
+              <td class="py-2 text-right">{[l.midi, l.soir].filter(Boolean).join(' · ')}</td>
             </tr>
           ))}
         </tbody>
@@ -40,7 +41,7 @@ const livraisonActive = infos.livraison.filter((l) => l.midi || l.soir);
         <p class="text-charcoal/70">{adresseTexte}</p>
         <a href={`tel:${infos.telephoneLien}`} class="mt-2 inline-block font-semibold text-brick">📞 {infos.telephoneAffiche}</a>
       </address>
-      <a href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`} target="_blank" rel="noopener" class="mt-4 inline-block rounded-lg bg-brick px-4 py-2.5 font-semibold text-white transition hover:bg-brick-dark">
+      <a href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`} target="_blank" rel="noopener noreferrer" class="mt-4 inline-block rounded-lg bg-brick px-4 py-2.5 font-semibold text-white transition hover:bg-brick-dark">
         Obtenir l'itinéraire
       </a>
     </div>

@@ -26,12 +26,12 @@
     { "jour": "Samedi", "ouvert": "06:00", "ferme": "20:00" }
   ],
   "livraison": [
+    { "jour": "Dimanche", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 18 h 45" },
     { "jour": "Lundi", "midi": null, "soir": null },
     { "jour": "Mardi", "midi": null, "soir": null },
     { "jour": "Mercredi", "midi": "11 h 30 – 13 h 30", "soir": "16 h 30 – 19 h 45" },
     { "jour": "Jeudi", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 19 h 45" },
     { "jour": "Vendredi", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 19 h 45" },
-    { "jour": "Samedi", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 19 h 45" },
-    { "jour": "Dimanche", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 18 h 45" }
+    { "jour": "Samedi", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 19 h 45" }
   ]
 }
