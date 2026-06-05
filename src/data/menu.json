@@ -1,0 +1,126 @@
+{
+  "categories": [
+    { "id": "sandwichs", "nom": "Sandwichs", "items": [
+      { "nom": "Jambon", "price": "6,00" },
+      { "nom": "Poulet", "price": "6,00" },
+      { "nom": "Œufs", "price": "6,00" },
+      { "nom": "Tomates", "price": "5,75" },
+      { "nom": "Fromage", "price": "5,25" },
+      { "nom": "Grilled-Cheese", "price": "5,25" }
+    ]},
+    { "id": "entrees", "nom": "Entrées", "items": [
+      { "nom": "Oignons français", "price": "7,50" },
+      { "nom": "Soupe maison", "price": "4,50" },
+      { "nom": "Fondue parmesan (2)", "price": "7,00" }
+    ]},
+    { "id": "salades", "nom": "Salades", "columns": ["Petite", "Repas"], "items": [
+      { "nom": "Salade du Chef", "prices": ["9,50", "14,25"] },
+      { "nom": "Salade César", "prices": ["9,95", "16,25"] },
+      { "nom": "Salade de poulet", "prices": [null, "16,25"] },
+      { "nom": "Salade de jambon", "prices": [null, "16,25"] },
+      { "nom": "Salade aux œufs", "prices": [null, "15,60"] },
+      { "nom": "Salade 4 saisons", "prices": [null, "15,85"] }
+    ]},
+    { "id": "frites", "nom": "Frites & Poutines", "note": "Producteur de pommes de terre local pour un meilleur goût", "columns": ["Bébé", "Petite", "Moy.", "Gros", "Ex-gros"], "items": [
+      { "nom": "Frites", "prices": [null, "5,75", "8,10", "10,45", "12,95"] },
+      { "nom": "Frites épicées", "prices": [null, "6,80", null, null, null] },
+      { "nom": "Frites sauce", "prices": ["6,15", "7,10", "9,30", "12,95", null] },
+      { "nom": "Frites sauce chou", "prices": ["6,80", "8,15", "10,80", "16,00", null] },
+      { "nom": "Frites Caruso", "prices": ["7,40", "8,65", "12,35", "17,35", null] },
+      { "nom": "Poutine", "desc": "sauce brune ou B.B.Q.", "prices": ["7,70", "8,95", "13,40", "19,10", null] },
+      { "nom": "Poutine Caruso", "prices": ["8,95", "11,10", "14,50", "20,85", null] },
+      { "nom": "Poutine Popcorn", "prices": [null, "12,10", "17,00", "23,95", null] },
+      { "nom": "Poutine pizza", "prices": [null, "12,10", "17,00", "23,95", null] },
+      { "nom": "Galvaude", "prices": [null, "11,15", "14,55", "21,00", null] },
+      { "nom": "Galvaude fromage", "prices": [null, "12,35", "17,50", "24,75", null] },
+      { "nom": "Dulton", "prices": [null, "12,20", "17,20", "24,75", null] }
+    ]},
+    { "id": "pates", "nom": "Pâtes", "columns": ["Demi", "Régulier"], "items": [
+      { "nom": "Spaghetti", "prices": ["11,05", "15,80"] },
+      { "nom": "Spaghetti végétarien", "prices": ["11,05", "15,80"] },
+      { "nom": "Spaghetti gratiné", "prices": ["13,80", "18,65"] },
+      { "nom": "Spaghetti 4 saisons", "desc": "oignons, piments, champignons, pepperoni, le tout gratiné", "prices": ["15,30", "23,05"] },
+      { "nom": "Lasagne", "prices": ["15,00", "20,15"] },
+      { "nom": "Lasagne 4 saisons", "prices": ["16,30", "23,90"] },
+      { "nom": "Extra champignons", "prices": ["3,75", null] }
+    ]},
+    { "id": "pizza", "nom": "Pizza", "columns": ["Mini 8\"", "Petite 9\"", "Med. 12\"", "Large 14\"", "Ex-large 16\""], "items": [
+      { "nom": "Fromage", "prices": ["11,50", "13,40", "19,50", "24,25", "28,00"] },
+      { "nom": "Pepperoni", "prices": ["13,25", "15,25", "23,50", "28,25", "33,50"] },
+      { "nom": "Champignons", "prices": ["12,80", "14,70", "21,50", "26,75", "32,00"] },
+      { "nom": "Garnie", "prices": ["14,50", "17,25", "26,35", "33,00", "39,00"] },
+      { "nom": "Végétarienne", "prices": ["14,50", "17,25", "26,35", "33,00", "39,00"] },
+      { "nom": "Smoked meat", "prices": ["17,75", "20,90", "31,75", "39,90", "47,50"] },
+      { "nom": "4 saisons", "desc": "pizza, sauce spaghetti, pepperoni, oignons, champignons, piments, fromage, bacon", "prices": ["17,75", "20,90", "31,75", "39,90", "47,50"] },
+      { "nom": "Au poulet BBQ", "prices": ["16,95", "19,95", "29,45", "38,20", "44,90"] }
+    ]},
+    { "id": "extra-pizza", "nom": "Extra pizza", "columns": ["Mini", "Petite", "Med.", "Large", "Ex-large"], "items": [
+      { "nom": "Oignons", "prices": ["1,00", "1,00", "2,00", "2,00", "3,00"] },
+      { "nom": "Légumes", "desc": "champignons, piments, tomates, olives vertes ou noires", "prices": ["2,00", "2,50", "3,50", "4,25", "4,75"] },
+      { "nom": "Fromage et viandes", "desc": "fromage, pepperoni, bacon, sauce spaghetti, poulet B.B.Q.", "prices": ["3,50", "3,75", "5,00", "5,50", "7,00"] },
+      { "nom": "Smoked meat", "prices": ["4,00", "4,00", "6,25", "6,25", "7,75"] }
+    ]},
+    { "id": "poulet", "nom": "Poulet", "items": [
+      { "nom": "1 morceau pané", "price": "15,75" },
+      { "nom": "2 morceaux panés", "price": "17,25" },
+      { "nom": "3 morceaux panés", "price": "18,90" },
+      { "nom": "Cuisse B.B.Q.", "price": "16,50" },
+      { "nom": "Poitrine B.B.Q.", "price": "19,10" },
+      { "nom": "½ poulet B.B.Q.", "price": "23,25" },
+      { "nom": "½ poulet B.B.Q. en cuisse", "price": "21,00" },
+      { "nom": "6 croquettes de poulet", "price": "12,35" },
+      { "nom": "3 lanières de poulet", "desc": "servis avec frites, salade de chou, sauce B.B.Q.", "price": "15,25" },
+      { "nom": "4 ailes de poulet", "price": "9,75" },
+      { "nom": "8 ailes de poulet", "price": "14,25" },
+      { "nom": "16 ailes de poulet", "desc": "servis avec frites, salade de chou, sauce piquante", "price": "22,40" }
+    ]},
+    { "id": "smoked-meat", "nom": "Smoked meat", "columns": ["Petit", "Gros"], "items": [
+      { "nom": "Smoked meat seul", "prices": ["11,15", "14,30"] },
+      { "nom": "Smoked meat assiette", "desc": "servis avec frites, chou et cornichons", "prices": ["17,15", "19,95"] }
+    ]},
+    { "id": "assiettes", "nom": "Nos assiettes", "note": "Servies avec frites et salade de chou", "items": [
+      { "nom": "Club au poulet", "price": "17,95" },
+      { "nom": "Club au jambon", "price": "17,95" },
+      { "nom": "Club aux œufs", "price": "17,95" },
+      { "nom": "Club du vendredi", "desc": "œuf, tomates, salade, fromage", "price": "17,95" },
+      { "nom": "Club smoked meat", "price": "20,75" },
+      { "nom": "Hot chicken", "price": "16,00" },
+      { "nom": "Hot hamburger", "price": "15,95" },
+      { "nom": "Hamburger Caruso", "price": "17,00" },
+      { "nom": "Hamburger 4 saisons", "desc": "2 portions de viande, ketchup, relish, moutarde, chou, tomates, salade, mayo, bacon, fromage, oignons", "price": "18,90" },
+      { "nom": "Hamburger garni", "price": "16,75" },
+      { "nom": "Steak haché", "price": "18,00" },
+      { "nom": "Spécial Hélène", "desc": "steak haché servi avec salade du chef et pommes de terre rissolées", "price": "18,95" },
+      { "nom": "Guedille aux œufs géante", "desc": "2 guedilles", "price": "14,65" },
+      { "nom": "Guedille au poulet géante", "desc": "2 guedilles", "price": "14,95" },
+      { "nom": "Hot-dog géant", "desc": "2 hot-dogs", "price": "13,95" },
+      { "nom": "Hot-dog géant garni", "desc": "2 hot-dogs", "price": "14,60" },
+      { "nom": "Pain à la viande géant", "desc": "2 pains à la viande", "price": "16,20" }
+    ]},
+    { "id": "divers", "nom": "Divers", "items": [
+      { "nom": "Hamburger", "price": "5,40" },
+      { "nom": "Hamburger garni", "desc": "ketchup, relish, moutarde, chou", "price": "5,85" },
+      { "nom": "Hamburger poulet", "price": "7,40" },
+      { "nom": "Cheeseburger", "price": "6,40" },
+      { "nom": "Cheeseburger garni", "desc": "ketchup, relish, moutarde, chou", "price": "6,50" },
+      { "nom": "Hot-dog", "price": "3,90" },
+      { "nom": "Hot-dog garni", "desc": "ketchup, relish, moutarde, chou", "price": "4,25" },
+      { "nom": "Hot-dog spécial", "desc": "relish, fromage, bacon", "price": "6,00" },
+      { "nom": "Pain à la viande", "price": "6,25" },
+      { "nom": "Guedille aux œufs", "price": "5,55" },
+      { "nom": "Guedille au poulet", "price": "5,85" },
+      { "nom": "Pogo", "price": "3,85" }
+    ]},
+    { "id": "desserts", "nom": "Desserts", "items": [
+      { "nom": "Gâteau (choix varié)", "price": "4,25" }
+    ]},
+    { "id": "breuvages", "nom": "Breuvages", "items": [
+      { "nom": "Café, thé, tisane", "price": "3,00" },
+      { "nom": "Boisson gazeuse (canette)", "price": "3,25" },
+      { "nom": "Eau pétillante", "price": "2,75" },
+      { "nom": "Jus", "desc": "raisin, orange, pomme, fruits", "price": "2,75" },
+      { "nom": "Eau en bouteille", "price": "2,00" }
+    ]},
+    { "id": "biere-vin", "nom": "Bière et vin", "note": "Disponible sur place — informez-vous auprès du personnel.", "items": [] }
+  ]
+}
