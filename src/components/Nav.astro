@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import infos from '../data/infos.json';
+import logo from '../assets/logo-4saisons.png';
 const liens = [
   { href: '#menu', label: 'Menu' },
   { href: '#apropos', label: 'À propos' },
@@ -8,8 +10,8 @@ const liens = [
 ---
 <header class="sticky top-0 z-50 bg-charcoal/95 backdrop-blur text-white">
   <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-    <a href="#top" class="font-display text-lg font-bold">
-      <span class="text-brick">4</span> Saisons
+    <a href="#top" class="flex items-center" aria-label="Restaurant 4 Saisons — accueil">
+      <Image src={logo} alt="Restaurant 4 Saisons" class="h-7 w-auto sm:h-8" loading="eager" />
     </a>
 
     <ul class="hidden gap-6 text-sm md:flex">
