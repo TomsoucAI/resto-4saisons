@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #1c1b1a;
+  --color-charcoal-soft: #262524;
+  --color-brick: #e0473e;
+  --color-brick-dark: #c8341f;
+  --color-cream: #fbf7f1;
+  --color-cream-line: #f0eadf;
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--color-charcoal); }
+:target { scroll-margin-top: 4.5rem; }
