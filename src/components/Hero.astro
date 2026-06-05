@@ -1,0 +1,21 @@
+---
+import infos from '../data/infos.json';
+import OpenStatus from './OpenStatus.astro';
+---
+<section class="relative overflow-hidden bg-charcoal text-white">
+  <div class="mx-auto max-w-5xl px-4 py-16 text-center sm:py-24">
+    <p class="text-xs font-semibold tracking-[0.2em] text-brick">PONT-ROUGE · DEPUIS DES DÉCENNIES</p>
+    <h1 class="mx-auto mt-4 max-w-2xl font-[var(--font-display)] text-4xl font-bold leading-tight sm:text-5xl">
+      Pizzas généreuses &amp; assiettes débordantes
+    </h1>
+    <p class="mx-auto mt-4 max-w-xl text-white/70">
+      Cuisine maison et service courtois au cœur de Pont-Rouge — sur place et en livraison.
+    </p>
+    <div class="mt-8 flex flex-col items-center gap-4">
+      <a href={`tel:${infos.telephoneLien}`} class="rounded-xl bg-brick px-7 py-4 text-lg font-semibold shadow-lg transition hover:bg-brick-dark">
+        📞 {infos.telephoneAffiche}
+      </a>
+      <OpenStatus />
+    </div>
+  </div>
+</section>

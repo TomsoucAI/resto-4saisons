@@ -1,9 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import DeliveryBanner from '../components/DeliveryBanner.astro';
 ---
 <Base>
   <div id="top"></div>
   <Nav />
-  <main class="p-8"><h1 class="text-2xl">Test</h1></main>
+  <main>
+    <Hero />
+    <DeliveryBanner />
+  </main>
 </Base>
