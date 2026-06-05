@@ -1,5 +1,6 @@
 ---
 import infos from '../data/infos.json';
+import PhoneIcon from './PhoneIcon.astro';
 const adr = infos.adresse;
 const adresseTexte = `${adr.rue}, ${adr.ville}, ${adr.province} ${adr.codePostal}`;
 const mapQuery = encodeURIComponent(`${infos.nom}, ${adresseTexte}`);
@@ -39,7 +40,7 @@ const livraisonActive = infos.livraison.filter((l) => l.midi || l.soir);
       <address class="mt-6 not-italic">
         <p class="font-semibold">{infos.nom}</p>
         <p class="text-charcoal/70">{adresseTexte}</p>
-        <a href={`tel:${infos.telephoneLien}`} class="mt-2 inline-block font-semibold text-brick">📞 {infos.telephoneAffiche}</a>
+        <a href={`tel:${infos.telephoneLien}`} class="mt-2 inline-flex items-center gap-1.5 font-semibold text-brick"><PhoneIcon class="h-4 w-4" /> {infos.telephoneAffiche}</a>
       </address>
       <a href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`} target="_blank" rel="noopener noreferrer" class="mt-4 inline-block rounded-lg bg-brick px-4 py-2.5 font-semibold text-white transition hover:bg-brick-dark">
         Obtenir l'itinéraire

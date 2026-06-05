@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import infos from '../data/infos.json';
 import logo from '../assets/logo-4saisons.png';
+import PhoneIcon from './PhoneIcon.astro';
 const liens = [
   { href: '#menu', label: 'Menu' },
   { href: '#apropos', label: 'À propos' },
@@ -21,8 +22,8 @@ const liens = [
     </ul>
 
     <div class="flex items-center gap-2">
-      <a href={`tel:${infos.telephoneLien}`} aria-label="Appeler le restaurant" class="rounded-lg bg-brick px-3 py-2 text-sm font-semibold transition hover:bg-brick-dark">
-        <span aria-hidden="true">📞</span> <span class="hidden sm:inline">Appeler</span>
+      <a href={`tel:${infos.telephoneLien}`} aria-label="Appeler le restaurant" class="inline-flex items-center gap-1.5 rounded-lg bg-brick px-3 py-2 text-sm font-semibold transition hover:bg-brick-dark">
+        <PhoneIcon class="h-4 w-4" /> <span class="hidden sm:inline">Appeler</span>
       </a>
       <button id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMobile" class="md:hidden p-2">
         <span class="block h-0.5 w-6 bg-white"></span>
