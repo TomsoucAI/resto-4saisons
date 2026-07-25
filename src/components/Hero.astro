@@ -1,9 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import infos from '../data/infos.json';
 import logo from '../assets/logo-4saisons.png';
 import OpenStatus from './OpenStatus.astro';
-import PhoneIcon from './PhoneIcon.astro';
 
 // Autoplay slideshow: every image in src/assets/hero/ is a slide (sorted by filename).
 const slideMods = import.meta.glob('../assets/hero/*.{jpg,jpeg,png,webp}', { eager: true });
@@ -37,10 +35,7 @@ const slides = Object.entries(slideMods)
         class="mx-auto w-full max-w-lg drop-shadow-[0_2px_12px_rgb(0_0_0/0.55)] sm:max-w-xl"
       />
     </h1>
-    <div class="mt-8 flex flex-col items-center gap-4">
-      <a href={`tel:${infos.telephoneLien}`} class="inline-flex items-center gap-2 rounded-xl bg-brick px-7 py-4 text-lg font-semibold shadow-lg transition hover:bg-brick-dark">
-        <PhoneIcon class="h-5 w-5" /> {infos.telephoneAffiche}
-      </a>
+    <div class="mt-8 flex justify-center">
       <OpenStatus />
     </div>
   </div>
