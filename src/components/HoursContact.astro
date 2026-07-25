@@ -36,6 +36,21 @@ const livraisonActive = infos.livraison.filter((l) => l.midi || l.soir);
         </tbody>
       </table>
 
+      <div class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+        <span class="flex items-center gap-1.5" role="img" aria-label="Interac, Visa et Mastercard acceptés">
+          <span aria-hidden="true" class="grid h-7 place-items-center rounded border border-cream-line bg-white px-2 text-xs font-bold text-charcoal">Interac</span>
+          <span aria-hidden="true" class="grid h-7 place-items-center rounded border border-cream-line bg-white px-2 text-[13px] font-extrabold italic tracking-tighter" style="color:#1A1F71">VISA</span>
+          <span aria-hidden="true" class="grid h-7 place-items-center rounded border border-cream-line bg-white px-2">
+            <svg viewBox="0 0 30 19" class="h-4 w-auto">
+              <circle cx="11" cy="9.5" r="8" fill="#EB001B" />
+              <circle cx="19" cy="9.5" r="8" fill="#F79E1B" />
+              <path d="M15 2.57a8 8 0 0 1 0 13.86 8 8 0 0 1 0-13.86Z" fill="#FF5F00" />
+            </svg>
+          </span>
+        </span>
+        <p class="text-sm text-charcoal/65">Des frais de livraison s'appliquent.</p>
+      </div>
+
       <address class="mt-6 not-italic">
         <p class="font-semibold">{infos.nom}</p>
         <p class="text-charcoal/70">{adresseTexte}</p>
