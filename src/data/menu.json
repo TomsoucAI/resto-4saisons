@@ -51,7 +51,7 @@
       { "nom": "Garnie", "desc": "sauce, pepperonis, champignons, piments, fromage", "prices": ["14,50", "17,25", "26,35", "33,00", "39,00"] },
       { "nom": "Végétarienne", "desc": "sauce, champignons, piments, oignons, tomates, fromage", "prices": ["14,50", "17,25", "26,35", "33,00", "39,00"] },
       { "nom": "Smoked meat", "desc": "sauce, smoked meat, piments, champignons, fromage", "prices": ["17,75", "20,90", "31,75", "39,90", "47,50"] },
-      { "nom": "4 saisons", "desc": "pizza, sauce spaghetti, pepperoni, oignons, champignons, piments, fromage, bacon", "prices": ["17,75", "20,90", "31,75", "39,90", "47,50"] },
+      { "nom": "4 saisons", "desc": "sauce pizza, sauce spaghetti, pepperoni, oignons, champignons, piments, fromage, bacon", "prices": ["17,75", "20,90", "31,75", "39,90", "47,50"] },
       { "nom": "Au poulet BBQ", "desc": "sauce B.B.Q., poulet, oignons, tomates, fromage", "prices": ["16,95", "19,95", "29,45", "38,20", "44,90"] }
     ]},
     { "id": "extra-pizza", "nom": "Extra pizza", "etoiles": 5, "columns": ["Mini", "Petite", "Med.", "Large", "Ex-large"], "items": [
