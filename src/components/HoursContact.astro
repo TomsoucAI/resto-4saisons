@@ -12,8 +12,8 @@ const livraisonActive = infos.livraison.filter((l) => l.midi || l.soir);
       <p class="text-xs font-semibold tracking-[0.2em] text-brick">HEURES &amp; CONTACT</p>
       <h2 class="mt-2 font-display text-3xl font-bold">Venez nous voir</h2>
 
-      <table class="mt-5 w-full text-sm sm:text-base">
-        <caption class="sr-only">Heures d'ouverture</caption>
+      <h3 class="mt-6 font-display text-xl font-bold">Heures d'ouverture</h3>
+      <table class="mt-2 w-full text-sm sm:text-base">
         <tbody>
           {infos.heures.map((h) => (
             <tr class="border-t border-cream-line">
@@ -24,9 +24,8 @@ const livraisonActive = infos.livraison.filter((l) => l.midi || l.soir);
         </tbody>
       </table>
 
-      <h3 class="mt-6 font-semibold">Heures de livraison</h3>
+      <h3 class="mt-8 font-display text-xl font-bold">Heures de livraison</h3>
       <table class="mt-2 w-full text-sm sm:text-base">
-        <caption class="sr-only">Heures de livraison</caption>
         <tbody>
           {livraisonActive.map((l) => (
             <tr class="border-t border-cream-line">
