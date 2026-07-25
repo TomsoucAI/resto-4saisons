@@ -121,6 +121,6 @@
       { "nom": "Jus", "desc": "raisin, orange, pomme, fruits", "price": "2,75" },
       { "nom": "Eau en bouteille", "price": "2,00" }
     ]},
-    { "id": "biere-vin", "nom": "Bière et vin", "note": "Disponible sur place — informez-vous auprès du personnel.", "items": [] }
+    { "id": "biere-vin", "nom": "Bière et vin", "note": "Informez-vous auprès du personnel", "items": [] }
   ]
 }
