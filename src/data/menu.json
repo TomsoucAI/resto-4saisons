@@ -45,22 +45,22 @@
       { "nom": "Extra champignons", "prices": ["3,75", null] }
     ]},
     { "id": "pizza", "nom": "Pizza", "etoiles": 5, "columns": ["Mini 8\"", "Petite 9\"", "Med. 12\"", "Large 14\"", "Ex-large 16\""], "items": [
-      { "nom": "Fromage", "prices": ["11,50", "13,40", "19,50", "24,25", "28,00"] },
-      { "nom": "Pepperoni", "prices": ["13,25", "15,25", "23,50", "28,25", "33,50"] },
-      { "nom": "Champignons", "prices": ["12,80", "14,70", "21,50", "26,75", "32,00"] },
-      { "nom": "Garnie", "prices": ["14,50", "17,25", "26,35", "33,00", "39,00"] },
-      { "nom": "Végétarienne", "prices": ["14,50", "17,25", "26,35", "33,00", "39,00"] },
-      { "nom": "Smoked meat", "prices": ["17,75", "20,90", "31,75", "39,90", "47,50"] },
+      { "nom": "Fromage", "desc": "sauce, fromage", "prices": ["11,50", "13,40", "19,50", "24,25", "28,00"] },
+      { "nom": "Pepperoni", "desc": "sauce, pepperonis, fromage", "prices": ["13,25", "15,25", "23,50", "28,25", "33,50"] },
+      { "nom": "Champignons", "desc": "sauce, champignons, fromage", "prices": ["12,80", "14,70", "21,50", "26,75", "32,00"] },
+      { "nom": "Garnie", "desc": "sauce, pepperonis, champignons, piments, fromage", "prices": ["14,50", "17,25", "26,35", "33,00", "39,00"] },
+      { "nom": "Végétarienne", "desc": "sauce, champignons, piments, oignons, tomates, fromage", "prices": ["14,50", "17,25", "26,35", "33,00", "39,00"] },
+      { "nom": "Smoked meat", "desc": "sauce, smoked meat, piments, champignons, fromage", "prices": ["17,75", "20,90", "31,75", "39,90", "47,50"] },
       { "nom": "4 saisons", "desc": "pizza, sauce spaghetti, pepperoni, oignons, champignons, piments, fromage, bacon", "prices": ["17,75", "20,90", "31,75", "39,90", "47,50"] },
-      { "nom": "Au poulet BBQ", "prices": ["16,95", "19,95", "29,45", "38,20", "44,90"] }
+      { "nom": "Au poulet BBQ", "desc": "sauce B.B.Q., poulet, oignons, tomates, fromage", "prices": ["16,95", "19,95", "29,45", "38,20", "44,90"] }
     ]},
-    { "id": "extra-pizza", "nom": "Extra pizza", "columns": ["Mini", "Petite", "Med.", "Large", "Ex-large"], "items": [
+    { "id": "extra-pizza", "nom": "Extra pizza", "etoiles": 5, "columns": ["Mini", "Petite", "Med.", "Large", "Ex-large"], "items": [
       { "nom": "Oignons", "prices": ["1,00", "1,00", "2,00", "2,00", "3,00"] },
       { "nom": "Légumes", "desc": "champignons, piments, tomates, olives vertes ou noires", "prices": ["2,00", "2,50", "3,50", "4,25", "4,75"] },
       { "nom": "Fromage et viandes", "desc": "fromage, pepperoni, bacon, sauce spaghetti, poulet B.B.Q.", "prices": ["3,50", "3,75", "5,00", "5,50", "7,00"] },
       { "nom": "Smoked meat", "prices": ["4,00", "4,00", "6,25", "6,25", "7,75"] }
     ]},
-    { "id": "poulet", "nom": "Poulet", "etoiles": 5, "items": [
+    { "id": "poulet", "nom": "Poulet", "etoiles": 5, "note": "Servis avec frites et salade de chou", "items": [
       { "nom": "1 morceau pané", "price": "15,75" },
       { "nom": "2 morceaux panés", "price": "17,25" },
       { "nom": "3 morceaux panés", "price": "18,90" },
