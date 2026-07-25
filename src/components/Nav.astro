@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import infos from '../data/infos.json';
+import logo from '../assets/logo-4saisons.png';
+import PhoneIcon from './PhoneIcon.astro';
+const liens = [
+  { href: '#menu', label: 'Menu' },
+  { href: '#apropos', label: 'À propos' },
+  { href: '#heures', label: 'Heures & contact' },
+];
+---
+<header class="sticky top-0 z-50 bg-charcoal/95 backdrop-blur text-white">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+    <a href="#top" class="flex items-center" aria-label="Restaurant 4 Saisons — accueil">
+      <Image src={logo} alt="Restaurant 4 Saisons" class="h-7 w-auto sm:h-8" loading="eager" />
+    </a>
+
+    <ul class="hidden gap-6 text-sm md:flex">
+      {liens.map((l) => (
+        <li><a href={l.href} class="text-white/80 transition hover:text-white">{l.label}</a></li>
+      ))}
+    </ul>
+
+    <div class="flex items-center gap-2">
+      <a href={`tel:${infos.telephoneLien}`} aria-label="Appeler le restaurant" class="inline-flex items-center gap-1.5 rounded-lg bg-brick px-3 py-2 text-sm font-semibold transition hover:bg-brick-dark">
+        <PhoneIcon class="h-4 w-4" /> <span class="hidden sm:inline">Appeler</span>
+      </a>
+      <button id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMobile" class="md:hidden p-2">
+        <span class="block h-0.5 w-6 bg-white"></span>
+        <span class="mt-1.5 block h-0.5 w-6 bg-white"></span>
+        <span class="mt-1.5 block h-0.5 w-6 bg-white"></span>
+      </button>
+    </div>
+  </nav>
+
+  <ul id="navMobile" class="hidden flex-col gap-1 border-t border-white/10 px-4 pb-3 md:hidden">
+    {liens.map((l) => (
+      <li><a href={l.href} class="block py-2 text-white/90">{l.label}</a></li>
+    ))}
+  </ul>
+</header>
+
+<script>
+  const btn = document.getElementById('navToggle');
+  const menu = document.getElementById('navMobile');
+  btn?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    menu?.classList.toggle('flex', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+  menu?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+      btn?.setAttribute('aria-expanded', 'false');
+      btn?.setAttribute('aria-label', 'Ouvrir le menu');
+    })
+  );
+</script>

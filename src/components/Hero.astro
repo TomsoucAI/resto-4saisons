@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-4saisons.png';
+import OpenStatus from './OpenStatus.astro';
+
+// Autoplay slideshow: every image in src/assets/hero/ is a slide (sorted by filename).
+const slideMods = import.meta.glob('../assets/hero/*.{jpg,jpeg,png,webp}', { eager: true });
+const slides = Object.entries(slideMods)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, mod]) => mod.default);
+---
+<section class="relative isolate flex min-h-[70vh] items-center overflow-hidden bg-charcoal text-white">
+  <div class="absolute inset-0 -z-20">
+    {slides.map((img, i) => (
+      <Image
+        src={img}
+        alt=""
+        aria-hidden="true"
+        loading={i === 0 ? 'eager' : 'lazy'}
+        class:list={[
+          'hero-slide absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ease-in-out',
+          i === 0 ? 'opacity-100' : 'opacity-0',
+        ]}
+      />
+    ))}
+  </div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-charcoal/70 via-charcoal/55 to-charcoal/85"></div>
+
+  <div class="relative mx-auto w-full max-w-5xl px-4 py-16 text-center sm:py-24 [text-shadow:0_2px_12px_rgb(0_0_0/0.55)]">
+    <h1 class="mx-auto max-w-2xl">
+      <Image
+        src={logo}
+        alt="Restaurant 4 Saisons"
+        loading="eager"
+        class="mx-auto w-full max-w-lg drop-shadow-[0_2px_12px_rgb(0_0_0/0.55)] sm:max-w-xl"
+      />
+    </h1>
+    <div class="mt-8 flex justify-center">
+      <OpenStatus />
+    </div>
+  </div>
+</section>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.hero-slide'));
+  if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let i = 0;
+    setInterval(() => {
+      slides[i].classList.replace('opacity-100', 'opacity-0');
+      i = (i + 1) % slides.length;
+      slides[i].classList.replace('opacity-0', 'opacity-100');
+    }, 3000);
+  }
+</script>

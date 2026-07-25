@@ -1,0 +1,61 @@
+---
+const { category } = Astro.props;
+---
+<div class="price-scroll relative">
+  <div class="price-track overflow-x-auto" tabindex="0" role="region" aria-label={`Prix — ${category.nom} (faites défiler pour voir tous les formats)`}>
+    <table class="w-full border-separate border-spacing-0 text-sm sm:text-base">
+      <thead>
+        <tr class="text-left text-sm text-charcoal/65">
+          <th scope="col" class="price-name sticky left-0 bg-white py-2 pr-2 font-semibold">&nbsp;</th>
+          {category.columns.map((c) => (
+            <th scope="col" class="px-2 py-2 text-right font-semibold whitespace-nowrap">{c}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {category.items.map((item) => (
+          <tr class="align-top">
+            <th scope="row" class="price-name sticky left-0 border-t border-cream-line bg-white py-2.5 pr-2 text-left text-base font-semibold">
+              {item.nom}
+              {item.desc && <span class="block text-xs font-normal text-charcoal/65">{item.desc}</span>}
+            </th>
+            {item.prices.map((p) => (
+              <td class="border-t border-cream-line px-2 py-2.5 text-right tabular-nums whitespace-nowrap">{p ? `${p} $` : '—'}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="price-fade pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white" hidden></div>
+  <button
+    type="button"
+    class="price-more absolute right-0 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-charcoal/55 text-lg text-white backdrop-blur transition hover:bg-charcoal/80"
+    aria-label="Voir les autres formats"
+    hidden
+  >›</button>
+</div>
+
+<script>
+  document.querySelectorAll('.price-scroll').forEach((wrap) => {
+    const track = wrap.querySelector('.price-track');
+    const fade = wrap.querySelector('.price-fade');
+    const btn = wrap.querySelector('.price-more');
+    if (!(track instanceof HTMLElement) || !(fade instanceof HTMLElement) || !(btn instanceof HTMLElement)) return;
+    const names = wrap.querySelectorAll('.price-name');
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const more = max > 1 && track.scrollLeft < max - 1;
+      fade.hidden = !more;
+      btn.hidden = !more;
+      names.forEach((el) => el.classList.toggle('price-name-scrolled', track.scrollLeft > 1));
+    };
+
+    btn.addEventListener('click', () => track.scrollBy({ left: track.clientWidth * 0.6, behavior: 'smooth' }));
+    track.addEventListener('scroll', () => window.requestAnimationFrame(update), { passive: true });
+    new ResizeObserver(update).observe(track);
+    update();
+  });
+</script>

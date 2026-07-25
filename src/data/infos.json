@@ -1,0 +1,38 @@
+{
+  "nom": "Restaurant 4 Saisons",
+  "telephoneAffiche": "(418) 873-3003",
+  "telephoneLien": "+14188733003",
+  "googleReviewUrl": "https://g.page/r/CT4cop7jtvAGEAE/review",
+  "adresse": {
+    "rue": "29 rue du Collège",
+    "ville": "Pont-Rouge",
+    "province": "QC",
+    "codePostal": "G3H 2Z9",
+    "pays": "CA"
+  },
+  "geo": { "lat": 46.7549, "lng": -71.6962 },
+  "apropos": "Le restaurant 4 Saisons est implanté au cœur de Pont-Rouge depuis des dizaines d'années et continue d'offrir à sa clientèle une nourriture de qualité et un service courtois. Nos frites maison sont préparées avec des pommes de terre d'un producteur local, la Ferme Raymond Doré.",
+  "avis": [
+    { "texte": "Un incontournable à chaque semaine", "auteur": "Marie" },
+    { "texte": "Une pizza de pizzeria", "auteur": "Dave M." },
+    { "texte": "Toujours Bon!", "auteur": "Jean-Denis C." }
+  ],
+  "heures": [
+    { "jour": "Dimanche", "ouvert": "06:00", "ferme": "19:00" },
+    { "jour": "Lundi", "ouvert": null, "ferme": null },
+    { "jour": "Mardi", "ouvert": null, "ferme": null },
+    { "jour": "Mercredi", "ouvert": "06:00", "ferme": "20:00" },
+    { "jour": "Jeudi", "ouvert": "06:00", "ferme": "20:00" },
+    { "jour": "Vendredi", "ouvert": "06:00", "ferme": "20:00" },
+    { "jour": "Samedi", "ouvert": "06:00", "ferme": "20:00" }
+  ],
+  "livraison": [
+    { "jour": "Dimanche", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 18 h 45" },
+    { "jour": "Lundi", "midi": null, "soir": null },
+    { "jour": "Mardi", "midi": null, "soir": null },
+    { "jour": "Mercredi", "midi": "11 h 30 – 13 h 30", "soir": "16 h 30 – 19 h 45" },
+    { "jour": "Jeudi", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 19 h 45" },
+    { "jour": "Vendredi", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 19 h 45" },
+    { "jour": "Samedi", "midi": "11 h 30 – 13 h 30", "soir": "16 h 00 – 19 h 45" }
+  ]
+}

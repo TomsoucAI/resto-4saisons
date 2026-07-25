@@ -1,0 +1,68 @@
+---
+import menu from '../data/menu.json';
+import MenuSection from './MenuSection.astro';
+
+// Auto-discover per-category photos dropped in src/assets/menu/.
+// A photo belongs to a category when its filename STARTS WITH the category key
+// (or a friendly alias), e.g. `pizza-1.jpg`, `poutine.jpg`, `poulet-pane-2.jpg`.
+// Several photos for one category → swipeable carousel. Accents/spaces are tolerated.
+const menuImgs = import.meta.glob('../assets/menu/*.{jpg,jpeg,png,webp}', { eager: true });
+
+const ALIASES = {
+  frites: ['frites', 'poutine'],
+  assiettes: ['assiettes', 'nos-assiettes', 'club'],
+};
+const normalize = (s) =>
+  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[\s_]+/g, '-');
+
+function imagesFor(id) {
+  const keys = ALIASES[id] || [id];
+  const re = new RegExp('^(' + keys.join('|') + ')([-._0-9]|$)');
+  return Object.entries(menuImgs)
+    .filter(([path]) => re.test(normalize(path.split('/').pop())))
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, mod]) => mod.default);
+}
+
+// Starred (best-seller) categories lead the menu, sorted by rating descending
+// (stable sort → ties keep menu order); unrated categories follow. First opens by default.
+const ordered = [
+  ...menu.categories.filter((c) => c.etoiles).sort((a, b) => b.etoiles - a.etoiles),
+  ...menu.categories.filter((c) => !c.etoiles),
+];
+---
+<section id="menu" class="scroll-mt-20 bg-cream py-14">
+  <div class="mx-auto max-w-3xl px-4">
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <p class="text-xs font-semibold tracking-[0.2em] text-brick">NOTRE MENU</p>
+        <h2 class="mt-2 font-display text-3xl font-bold">Le menu complet</h2>
+      </div>
+      <button
+        id="toggleAll"
+        type="button"
+        data-expanded="false"
+        class="rounded-full border border-charcoal/15 bg-white px-4 py-2 text-sm font-semibold text-charcoal/80 shadow-sm transition hover:border-charcoal/30 hover:text-charcoal"
+      >
+        Tout déplier
+      </button>
+    </div>
+    <p class="mt-2 text-sm text-charcoal/65">Touchez une catégorie pour afficher les plats et les prix.</p>
+
+    <div class="mt-6 flex flex-col gap-3">
+      {ordered.map((c) => <MenuSection category={c} images={imagesFor(c.id)} />)}
+    </div>
+  </div>
+</section>
+
+<script>
+  const btn = document.getElementById('toggleAll');
+  btn?.addEventListener('click', () => {
+    const expand = btn.dataset.expanded !== 'true';
+    document.querySelectorAll('#menu details.menu-cat').forEach((d) => {
+      if (d instanceof HTMLDetailsElement) d.open = expand;
+    });
+    btn.dataset.expanded = String(expand);
+    btn.textContent = expand ? 'Tout réduire' : 'Tout déplier';
+  });
+</script>
