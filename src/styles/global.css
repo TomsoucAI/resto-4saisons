@@ -15,8 +15,23 @@ html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); color: var(--color-charcoal); }
 :target { scroll-margin-top: 4.5rem; }
 
+/* Visible keyboard focus, consistent across light and dark surfaces */
+:focus-visible { outline: 2px solid var(--color-brick); outline-offset: 2px; }
+
 /* Accordion (menu categories) — hide native marker, rotate custom chevron */
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
 .chevron { transition: transform 0.2s ease; }
 details[open] > summary .chevron { transform: rotate(180deg); }
+
+/* Price tables — pinned name column lifts off the scrolling prices */
+.price-name-scrolled { box-shadow: 6px 0 8px -6px rgb(0 0 0 / 0.25); }
+
+/* Scroll-hint chevron nudges twice when it appears, then settles */
+@keyframes price-nudge {
+  0%, 100% { transform: translate(0, -50%); }
+  50% { transform: translate(-6px, -50%); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .price-more:not([hidden]) { animation: price-nudge 1s ease-out 0.5s 2; }
+}
