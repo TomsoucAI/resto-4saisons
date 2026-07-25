@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import infos from '../data/infos.json';
+import logo from '../assets/logo-4saisons.png';
 import OpenStatus from './OpenStatus.astro';
 import PhoneIcon from './PhoneIcon.astro';
 
@@ -28,13 +29,14 @@ const slides = Object.entries(slideMods)
   <div class="absolute inset-0 -z-10 bg-gradient-to-b from-charcoal/70 via-charcoal/55 to-charcoal/85"></div>
 
   <div class="relative mx-auto w-full max-w-5xl px-4 py-16 text-center sm:py-24 [text-shadow:0_2px_12px_rgb(0_0_0/0.55)]">
-    <p class="text-xs font-semibold tracking-[0.2em] text-brick">PONT-ROUGE · DEPUIS DES DÉCENNIES</p>
-    <h1 class="mx-auto mt-4 max-w-2xl font-display text-4xl font-bold leading-tight sm:text-5xl">
-      Pizzas généreuses &amp; assiettes débordantes
+    <h1 class="mx-auto max-w-2xl">
+      <Image
+        src={logo}
+        alt="Restaurant 4 Saisons"
+        loading="eager"
+        class="mx-auto w-full max-w-lg drop-shadow-[0_2px_12px_rgb(0_0_0/0.55)] sm:max-w-xl"
+      />
     </h1>
-    <p class="mx-auto mt-4 max-w-xl text-white/80">
-      Cuisine maison et service courtois au cœur de Pont-Rouge — sur place et en livraison.
-    </p>
     <div class="mt-8 flex flex-col items-center gap-4">
       <a href={`tel:${infos.telephoneLien}`} class="inline-flex items-center gap-2 rounded-xl bg-brick px-7 py-4 text-lg font-semibold shadow-lg transition hover:bg-brick-dark">
         <PhoneIcon class="h-5 w-5" /> {infos.telephoneAffiche}
