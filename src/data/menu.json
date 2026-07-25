@@ -41,7 +41,7 @@
       { "nom": "Spaghetti gratiné", "prices": ["13,80", "18,65"] },
       { "nom": "Spaghetti 4 saisons", "desc": "oignons, piments, champignons, pepperoni, le tout gratiné", "prices": ["15,30", "23,05"] },
       { "nom": "Lasagne", "prices": ["15,00", "20,15"] },
-      { "nom": "Lasagne 4 saisons", "prices": ["16,30", "23,90"] },
+      { "nom": "Lasagne 4 saisons", "desc": "pepperonis, oignons, champignons, piments, fromage, bacon", "prices": ["16,30", "23,90"] },
       { "nom": "Extra champignons", "prices": ["3,75", null] }
     ]},
     { "id": "pizza", "nom": "Pizza", "etoiles": 5, "columns": ["Mini 8\"", "Petite 9\"", "Med. 12\"", "Large 14\"", "Ex-large 16\""], "items": [
