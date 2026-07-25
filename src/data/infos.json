@@ -11,7 +11,7 @@
     "pays": "CA"
   },
   "geo": { "lat": 46.7549, "lng": -71.6962 },
-  "apropos": "Le restaurant 4 Saisons est implanté au cœur de Pont-Rouge depuis des dizaines d'années et continue d'offrir à sa clientèle une nourriture de qualité et un service courtois. Nos frites maison sont préparées avec des pommes de terre d'un producteur local, la Ferme Raymond Doré. Laissez-vous tenter par nos pizzas généreuses et nos assiettes débordantes de saveurs disponibles aussi en livraison.",
+  "apropos": "Le restaurant 4 Saisons est implanté au cœur de Pont-Rouge depuis des dizaines d'années et continue d'offrir à sa clientèle une nourriture de qualité et un service courtois. Nos frites maison sont préparées avec des pommes de terre d'un producteur local, la Ferme Raymond Doré.",
   "avis": [
     { "texte": "Un incontournable à chaque semaine", "auteur": "Marie" },
     { "texte": "Une pizza de pizzeria", "auteur": "Dave M." },
