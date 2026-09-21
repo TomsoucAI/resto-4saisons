@@ -1,6 +1,8 @@
 # Restaurant 4 Saisons — État du projet (handoff)
 
-_Dernière mise à jour : 2026-06-05_
+_Dernière mise à jour : 2026-09-21_
+
+> **Mise en ligne sur resto4saisons.com :** voir **`HANDOFF.md`** (guide pour l'hébergeur) et le zip `resto4saisons-site.zip` généré par `npm run build`.
 
 Refonte du site du Restaurant 4 Saisons (Pont-Rouge, QC) — site vitrine statique, page unique, français, mobile-first.
 
@@ -34,7 +36,7 @@ Voir **`README.md`** (section « Modifier le contenu ») :
 
 ## À régler AVANT la mise en ligne sur le vrai domaine
 
-1. **Domaine** : quand `resto4saisons.com` est disponible, mettre `base: '/'` et `site` au domaine dans `astro.config.mjs`, puis pointer le DNS.
+1. **Domaine** : fait (branche `production-build`). Le build cible `https://resto4saisons.com` à la racine par défaut ; l'aperçu GitHub Pages est conservé via `DEPLOY_TARGET=github-pages` dans le workflow. Reste : l'hébergeur pointe le DNS (voir `HANDOFF.md`).
 2. **Code postal** à confirmer : `G3H 2Z9` (par défaut) vs `G3A 2Z9` (ancien site).
 3. **Coordonnées GPS** (`geo` dans `infos.json`) à vérifier.
 4. **Note Google** (optionnelle) : remplir `googleRating` / `googleReviewCount` si on veut afficher la note. _(Note : retiré du design actuel — le client a préféré la carte d'avis sans note.)_
