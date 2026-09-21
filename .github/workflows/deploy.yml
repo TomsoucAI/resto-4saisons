@@ -18,6 +18,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Tells astro.config.mjs to build for the GitHub Pages preview
+    # (site tomsoucai.github.io + base /resto-4saisons). Without it the build
+    # targets production (https://resto4saisons.com, no base path).
+    env:
+      DEPLOY_TARGET: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
