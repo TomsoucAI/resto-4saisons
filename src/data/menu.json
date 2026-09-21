@@ -88,7 +88,7 @@
       { "nom": "Hot hamburger", "price": "15,95" },
       { "nom": "Hamburger Caruso", "price": "17,00" },
       { "nom": "Hamburger 4 saisons", "desc": "2 portions de viande, ketchup, relish, moutarde, chou, tomates, salade, mayo, bacon, fromage, oignons", "price": "18,90" },
-      { "nom": "Hamburger garni", "price": "16,75" },
+      { "nom": "Hamburger géant", "desc": "2 hamburgers", "price": "16,75" },
       { "nom": "Steak haché", "price": "18,00" },
       { "nom": "Spécial Hélène", "desc": "steak haché servi avec salade du chef et pommes de terre rissolées", "price": "18,95" },
       { "nom": "Guedille aux œufs géante", "desc": "2 guedilles", "price": "14,65" },
