@@ -5,6 +5,7 @@
   --color-charcoal-soft: #262524;
   --color-brick: #e0473e;
   --color-brick-dark: #c8341f;
+  --color-brick-light: #ef6a62; /* brick for small text on charcoal (5.7:1) */
   --color-cream: #fbf7f1;
   --color-cream-line: #f0eadf;
   --font-display: "Poppins", system-ui, sans-serif;
