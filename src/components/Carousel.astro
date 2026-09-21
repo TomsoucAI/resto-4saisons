@@ -4,19 +4,21 @@ const { images, label, autoplay = false, interval = 3000, aspectClass = 'aspect-
 const single = images.length === 1;
 ---
 {single ? (
-  <Image src={images[0]} alt={label} loading="lazy" class={`${aspectClass} w-full rounded-lg object-cover`} />
+  <Image src={images[0]} alt={label} loading="lazy" width={1536} widths={[480, 768, 1024, 1536]} sizes="(min-width: 800px) 736px, calc(100vw - 2rem)" class={`${aspectClass} w-full rounded-lg object-cover`} />
 ) : (
   <div class="carousel relative overflow-hidden rounded-lg" data-autoplay={autoplay ? 'true' : undefined} data-interval={interval}>
     <div class="carousel-track flex snap-x snap-mandatory overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {images.map((img, i) => (
-        <Image src={img} alt={`${label} — photo ${i + 1}`} loading="lazy" class={`${aspectClass} w-full shrink-0 snap-center object-cover`} />
+        <Image src={img} alt={`${label} — photo ${i + 1}`} loading="lazy" width={1536} widths={[480, 768, 1024, 1536]} sizes="(min-width: 800px) 736px, calc(100vw - 2rem)" class={`${aspectClass} w-full shrink-0 snap-center object-cover`} />
       ))}
     </div>
     <button type="button" class="carousel-prev absolute left-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-charcoal/55 text-lg text-white backdrop-blur transition hover:bg-charcoal/80" aria-label="Image précédente">‹</button>
     <button type="button" class="carousel-next absolute right-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-charcoal/55 text-lg text-white backdrop-blur transition hover:bg-charcoal/80" aria-label="Image suivante">›</button>
-    <div class="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
+    <div class="absolute bottom-0 left-0 right-0 flex justify-center">
       {images.map((_, i) => (
-        <button type="button" class="carousel-dot h-1.5 w-1.5 rounded-full bg-white/50 transition-all aria-[current=true]:w-4 aria-[current=true]:bg-white" aria-label={`Aller à la photo ${i + 1}`} aria-current="false"></button>
+        <button type="button" class="carousel-dot group grid h-6 w-6 place-items-center" aria-label={`Aller à la photo ${i + 1}`} aria-current="false">
+          <span class="h-1.5 w-1.5 rounded-full bg-white/50 transition-all group-aria-[current=true]:w-4 group-aria-[current=true]:bg-white"></span>
+        </button>
       ))}
     </div>
   </div>
