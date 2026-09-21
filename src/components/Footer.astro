@@ -1,0 +1,14 @@
+---
+import infos from '../data/infos.json';
+import ReviewCTA from './ReviewCTA.astro';
+const adr = infos.adresse;
+---
+<footer class="bg-charcoal py-10 text-center text-sm text-white/50">
+  <div class="mb-6 flex flex-col items-center gap-3">
+    <p class="text-white/70">Un avis fait toute la différence pour un resto de quartier 🙏</p>
+    <ReviewCTA compact />
+  </div>
+  <p>{adr.rue}, {adr.ville}, {adr.province} {adr.codePostal} · <a href={`tel:${infos.telephoneLien}`} class="text-white/70">{infos.telephoneAffiche}</a></p>
+  <p class="mt-1">© 2026 {infos.nom} — Tous droits réservés.</p>
+  <p class="mt-1">Site réalisé par <a href="https://atrix.ca" target="_blank" rel="noopener noreferrer" class="text-white/70 transition hover:text-white">Atrix.ca</a></p>
+</footer>

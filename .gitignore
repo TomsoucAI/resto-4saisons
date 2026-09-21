@@ -5,3 +5,6 @@ dist/
 .superpowers/
 .env
 .DS_Store
+
+# Contractor deliverable, regenerated from dist/ (see HANDOFF.md)
+*.zip

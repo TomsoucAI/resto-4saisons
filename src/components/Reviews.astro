@@ -1,0 +1,12 @@
+---
+import infos from '../data/infos.json';
+---
+<div class="mt-8 grid gap-4 sm:grid-cols-3">
+  {infos.avis.map((a) => (
+    <figure class="rounded-xl bg-charcoal-soft p-5">
+      <div class="text-brick" aria-hidden="true">★★★★★</div>
+      <blockquote class="mt-2 text-white/90">« {a.texte} »</blockquote>
+      <figcaption class="mt-2 text-sm text-white/50">— {a.auteur}</figcaption>
+    </figure>
+  ))}
+</div>

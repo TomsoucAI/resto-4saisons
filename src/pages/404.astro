@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import infos from '../data/infos.json';
+import PhoneIcon from '../components/PhoneIcon.astro';
+
+const home = import.meta.env.BASE_URL;
+---
+<Base noindex title="Page introuvable — Restaurant 4 Saisons" description="Cette page n'existe pas. Retournez à l'accueil du Restaurant 4 Saisons à Pont-Rouge.">
+  <main class="flex min-h-screen flex-col items-center justify-center bg-charcoal px-6 text-center text-white">
+    <p class="font-display text-7xl font-bold text-brick">404</p>
+    <h1 class="mt-4 font-display text-2xl font-semibold">Page introuvable</h1>
+    <p class="mt-3 max-w-md text-white/80">Cette page n'existe pas ou a été déplacée. Le menu, les heures d'ouverture et nos coordonnées sont sur la page d'accueil.</p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a href={home} class="inline-flex items-center rounded-xl bg-brick px-6 py-3 font-semibold transition hover:bg-brick-dark">Retour à l'accueil</a>
+      <a href={`tel:${infos.telephoneLien}`} class="inline-flex items-center gap-2 rounded-xl border border-white/30 px-6 py-3 font-semibold transition hover:bg-white/10"><PhoneIcon class="h-4 w-4" /> {infos.telephoneAffiche}</a>
+    </div>
+  </main>
+</Base>

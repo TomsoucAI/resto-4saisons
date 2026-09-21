@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+const { images, label, autoplay = false, interval = 3000, aspectClass = 'aspect-[3/2]' } = Astro.props;
+const single = images.length === 1;
+---
+{single ? (
+  <Image src={images[0]} alt={label} loading="lazy" class={`${aspectClass} w-full rounded-lg object-cover`} />
+) : (
+  <div class="carousel relative overflow-hidden rounded-lg" data-autoplay={autoplay ? 'true' : undefined} data-interval={interval}>
+    <div class="carousel-track flex snap-x snap-mandatory overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {images.map((img, i) => (
+        <Image src={img} alt={`${label} — photo ${i + 1}`} loading="lazy" class={`${aspectClass} w-full shrink-0 snap-center object-cover`} />
+      ))}
+    </div>
+    <button type="button" class="carousel-prev absolute left-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-charcoal/55 text-lg text-white backdrop-blur transition hover:bg-charcoal/80" aria-label="Image précédente">‹</button>
+    <button type="button" class="carousel-next absolute right-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-charcoal/55 text-lg text-white backdrop-blur transition hover:bg-charcoal/80" aria-label="Image suivante">›</button>
+    <div class="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
+      {images.map((_, i) => (
+        <button type="button" class="carousel-dot h-1.5 w-1.5 rounded-full bg-white/50 transition-all aria-[current=true]:w-4 aria-[current=true]:bg-white" aria-label={`Aller à la photo ${i + 1}`} aria-current="false"></button>
+      ))}
+    </div>
+  </div>
+)}
+
+<script>
+  document.querySelectorAll('.carousel').forEach((c) => {
+    const track = c.querySelector('.carousel-track');
+    if (!(track instanceof HTMLElement)) return;
+    const count = track.children.length;
+    const dots = Array.from(c.querySelectorAll('.carousel-dot'));
+    const width = () => track.clientWidth || 1;
+    const current = () => Math.round(track.scrollLeft / width());
+    const go = (i) => track.scrollTo({ left: width() * (((i % count) + count) % count), behavior: 'smooth' });
+
+    let timer = null;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const auto = c.getAttribute('data-autoplay') === 'true' && !reduce;
+    const delay = parseInt(c.getAttribute('data-interval') || '3000', 10);
+    const stop = () => { if (timer !== null) { clearInterval(timer); timer = null; } };
+    const start = () => { if (auto && timer === null) timer = window.setInterval(() => go(current() + 1), delay); };
+    const restart = () => { stop(); start(); };
+
+    c.querySelector('.carousel-prev')?.addEventListener('click', () => { go(current() - 1); restart(); });
+    c.querySelector('.carousel-next')?.addEventListener('click', () => { go(current() + 1); restart(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { go(i); restart(); }));
+
+    const setActive = () => {
+      const idx = current();
+      dots.forEach((d, i) => d.setAttribute('aria-current', i === idx ? 'true' : 'false'));
+    };
+    track.addEventListener('scroll', () => window.requestAnimationFrame(setActive), { passive: true });
+    setActive();
+
+    c.addEventListener('mouseenter', stop);
+    c.addEventListener('mouseleave', start);
+    c.addEventListener('focusin', stop);
+    c.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    start();
+  });
+</script>
