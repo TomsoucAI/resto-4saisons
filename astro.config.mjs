@@ -18,6 +18,13 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'ignore',
 
+  // Old URLs from the previous site that Google still indexes. Static output
+  // emits a meta-refresh page (with a canonical to the destination) so
+  // visitors land on the hours/contact section instead of the 404.
+  redirects: {
+    '/nous-joindre': '/#heures',
+  },
+
   integrations: [sitemap()],
 
   vite: {
